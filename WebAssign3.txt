@@ -1,0 +1,479 @@
+💡 **Q.1** What is a Media Query in CSS, and what is its purpose?
+
+A media query is a feature in CSS that allows you to apply different styles or rules to a web page based on various characteristics of the device or media it is being displayed on. It allows you to create responsive designs that adapt to different screen sizes, resolutions, and other device properties. The purpose of media queries is to provide a way to customize the layout, design, and presentation of a website based on the capabilities and constraints of the user's device.
+
+💡 **Q.2** How do you define a media query in CSS?
+
+To define a media query in CSS, you use the `@media` rule followed by a media type and a set of conditions or media features. Here's the basic syntax:
+
+```css
+@media media-type and (media-feature: value) {
+  /* CSS rules to apply for the specified media type and conditions */
+}
+```
+
+For example, to target screens with a maximum width of 600 pixels, you can use the following media query:
+
+```css
+@media screen and (max-width: 600px) {
+  /* CSS rules for screens with a maximum width of 600px */
+}
+```
+
+Within the media query block, you can include any CSS rules you want to apply when the specified conditions are met.
+
+💡 **Q.3** Explain the concept of Breakpoints in Responsive Web Design and How They are used in Media Queries.
+
+In responsive web design, breakpoints are specific points or thresholds at which the layout of a web page changes to accommodate different screen sizes or devices. Breakpoints are defined in terms of the width of the viewport, and they help determine when certain CSS rules or styles should be applied.
+
+Media queries play a crucial role in implementing breakpoints in CSS. By using media queries, you can set conditions based on the viewport width or other characteristics of the device, and specify different styles or layouts accordingly. For example, you can define a breakpoint at a specific viewport width and adjust the design to display content in a single column instead of multiple columns.
+
+Here's an example of how breakpoints can be used with media queries:
+
+```css
+/* Default styles for all screen sizes */
+
+@media screen and (min-width: 768px) {
+  /* Styles for medium-sized screens */
+}
+
+@media screen and (min-width: 1024px) {
+  /* Styles for large screens */
+}
+```
+
+In the above example, the first media query targets screens with a minimum width of 768 pixels, which represents a medium-sized screen. The second media query targets screens with a minimum width of 1024 pixels, which represents a large screen. By applying different styles at these breakpoints, you can create a responsive design that adapts to various devices.
+
+💡 **Q.4** What is the purpose of using Media Queries for Print Media?
+
+Media queries can also be used for print media to provide different styles specifically for printed documents. When a web page is printed, it may need to have a different layout, typography, or other visual characteristics compared to its screen display. Media queries for print media allow you to define CSS rules that apply only when the document is printed.
+
+Here's an example of using a media query for print:
+
+```css
+@media print {
+  /* CSS rules for print media */
+}
+```
+
+Within the media query block, you can specify styles such as adjusting margins, hiding certain elements, modifying font sizes, or changing the overall layout to optimize the printed output. This allows you to customize the appearance of a web page when it is printed, ensuring a more suitable and legible format for physical documents.
+
+💡 **Q.5** What is the purpose of the `orientation` media feature?
+
+The `orientation` media feature is used to target the orientation of the device, specifically whether it is in portrait or landscape mode. It allows you to apply different styles based on how the user is holding or viewing the device.
+
+The `orientation` media feature can have two values: `portrait` and `landscape`. The `portrait` value represents a device held vertically, while the `landscape` value represents a device held horizontally.
+
+Here's an example of using the `orientation` media feature:
+
+```css
+@media (orientation: portrait) {
+  /* Styles for portrait orientation */
+}
+
+@media (orientation: landscape) {
+  /* Styles for landscape orientation */
+}
+```
+
+By using the `orientation` media feature, you can optimize the layout and design of a web page based on how the user is interacting with their device. For example, you might want to display content in a single column in portrait mode and switch to a multi-column layout in landscape mode to make the best use of available screen space.
+
+Question6.
+HTML code:
+```html
+<!DOCTYPE html>
+<html>
+<head>
+  <title>One-Page Landing Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Add header content here -->
+  </header>
+
+  <main>
+    <section id="hero">
+      <div class="hero-content">
+        <h1>Welcome to OneCard</h1>
+        <p>Your All-In-One Card Solution</p>
+        <a href="#features">Learn More</a>
+      </div>
+      <div class="video-container">
+        <video src="your-video.mp4" controls></video>
+      </div>
+    </section>
+
+    <section id="features">
+      <!-- Add feature content here -->
+    </section>
+
+    <!-- Add more sections as needed -->
+  </main>
+
+  <footer>
+    <!-- Add footer content here -->
+  </footer>
+</body>
+</html>
+```
+
+CSS code (styles.css):
+```css
+/* Reset default browser styles */
+body, h1, p, video {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Hero section styles */
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #007bff, #0056b3);
+  color: #fff;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 24px;
+  margin-bottom: 40px;
+}
+
+a {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #fff;
+  color: #333;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+/* Video section styles */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio for responsive video */
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Add styles for other sections, footer, and additional elements as needed */
+```
+Question7.<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Image Gallery</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="gallery">
+    <img src="image1.jpg" alt="Image 1">
+    <img src="image2.jpg" alt="Image 2">
+    <img src="image3.jpg" alt="Image 3">
+    <img src="image4.jpg" alt="Image 4">
+    <!-- Add more images as needed -->
+  </div>
+</body>
+</html>
+/* Reset default browser styles */
+body, img {
+  margin: 0;
+  padding: 0;
+}
+
+/* Gallery styles */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+Question8.<!DOCTYPE html>
+<html>
+<head>
+  <title>OneCard Information Section</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Add header content here -->
+  </header>
+
+  <main>
+    <section id="hero">
+      <!-- Add hero section content here -->
+    </section>
+
+    <section id="information">
+      <div class="container">
+        <h2>About OneCard</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel nisi neque. Sed volutpat tristique risus vitae fermentum.</p>
+      </div>
+    </section>
+
+    <!-- Add more sections as needed -->
+  </main>
+
+  <footer>
+    <!-- Add footer content here -->
+  </footer>
+</body>
+</html>
+/* Reset default browser styles */
+body, h2, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header styles */
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}
+
+/* Hero section styles */
+#hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(to bottom right, #007bff, #0056b3);
+  color: #fff;
+  text-align: center;
+}
+
+/* Information section styles */
+#information {
+  background-color: #f1f1f1;
+  color: #333;
+  padding: 40px 0;
+}
+
+#information h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#information p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Dark mode styles for larger screens */
+@media screen and (min-width: 768px) {
+  body {
+    background-color: #333;
+    color: #fff;
+  }
+
+  header {
+    background-color: #111;
+  }
+
+  #information {
+    background-color: #222;
+    color: #fff;
+  }
+}
+Question9<!DOCTYPE html>
+<html>
+<head>
+  <title>Responsive Footer</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <footer>
+    <div class="container">
+      <div class="footer-left">
+        <h3>About Us</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="footer-right">
+        <h3>Contact Info</h3>
+        <p>Email: example@example.com</p>
+        <p>Phone: +1 123-456-7890</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+/* Reset default browser styles */
+body, h3, p {
+  margin: 0;
+  padding: 0;
+}
+
+/* Footer styles */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-left, .footer-right {
+  flex-basis: 50%;
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+Question10.<!DOCTYPE html>
+<html>
+<head>
+  <title>Student Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Student Dashboard</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Student ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>John Doe</td>
+          <td>john.doe@example.com</td>
+          <td>20</td>
+        </tr>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
+/* Reset default browser styles */
+body, h1, table {
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow-x: auto; /* Enable horizontal scrolling on small screens */
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Media query for small screens */
+@media screen and (max-width: 768px) {
+  table {
+    display: block;
+    overflow: auto;
+    white-space: nowrap;
+  }
+  
+  th, td {
+    display: inline-block;
+    width: 200px;
+  }
+}
